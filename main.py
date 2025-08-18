@@ -28,9 +28,9 @@ if __name__ == "__main__":
             word = r.recognize_google(audio)
             if word.lower() == "hello":
                 speak("How can I assist you?")
-                with sr.Microphone() as source:
-                    print("Listening for command...")
-                    audio = r.listen(source, timeout=2, phrase_time_limit=1)
+                # with sr.Microphone() as source:
+                #     print("Listening for command...")
+                #     audio = r.listen(source, timeout=2, phrase_time_limit=1)
 
 
         except Exception as e:
