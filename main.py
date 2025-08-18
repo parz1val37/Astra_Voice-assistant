@@ -27,5 +27,5 @@ if __name__ == "__main__":
             command = r.recognize_google(audio)
             print(command)
         except Exception as e:
-            print("Error:", str(e))
+            print(f"Error: {e}")
             continue
