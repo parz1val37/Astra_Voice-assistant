@@ -19,13 +19,20 @@ if __name__ == "__main__":
     speak("Initializing Astra....")
     while True:
         r = sr.Recognizer()
-        with sr.Microphone() as source:
-            print("Listening...")
-            audio = r.listen(source, timeout=4, phrase_time_limit=5)
-        print("Recognizing...")
         try:
-            command = r.recognize_google(audio)
-            print(command)
+            with sr.Microphone() as source:
+                print("Listening...")
+                audio = r.listen(source, timeout=4, phrase_time_limit=3)
+            print("Recognizing...")
+
+            word = r.recognize_google(audio)
+            if word.lower() == "hello":
+                speak("How can I assist you?")
+                with sr.Microphone() as source:
+                    print("Listening for command...")
+                    audio = r.listen(source, timeout=2, phrase_time_limit=1)
+
+
         except Exception as e:
             print(f"Error: {e}")
             continue
