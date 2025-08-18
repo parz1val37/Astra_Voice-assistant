@@ -21,10 +21,11 @@ if __name__ == "__main__":
         r = sr.Recognizer()
         with sr.Microphone() as source:
             print("Listening...")
-            audio = r.listen(source, timeout=6, phrase_time_limit=5)
+            audio = r.listen(source, timeout=4, phrase_time_limit=5)
         print("Recognizing...")
         try:
             command = r.recognize_google(audio)
-            print(f"{command}")
+            print(command)
         except Exception as e:
-            print(f"Could not request results; {e}")
+            print("Error:", str(e))
+            continue
