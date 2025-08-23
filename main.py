@@ -1,4 +1,4 @@
-# Uncomplete leaving this project for sometime..
+# Uncomplete! leaving this project for sometime..
 import speech_recognition as sr
 import webbrowser
 import pyttsx3
